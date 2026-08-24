@@ -72,8 +72,8 @@ By the end of this workshop, you will:
 ## Getting Help
 
 - **Email:** its-hpc@pomona.edu
-- **Issues:** https://github.com/pomona-college-hpc/parallel-computing/issues
-- **Discussions:** https://github.com/pomona-college-hpc/parallel-computing/discussions
+- **Issues:** https://github.com/Pomona-College/hpc-parallel-computing/issues
+- **Discussions:** https://github.com/Pomona-College/hpc-parallel-computing/discussions
 
 ## Contributing
 
@@ -93,7 +93,7 @@ If you use this workshop, please cite:
 ```
 Wilson, A. (2026). Parallel Computing Fundamentals: Workshop 18.
 Pomona College High-Performance Computing Team.
-https://github.com/pomona-college-hpc/parallel-computing
+https://github.com/Pomona-College/hpc-parallel-computing
 ```
 
 ## License

@@ -1,7 +1,7 @@
 [xsede-now-access-tutorials]: https://www.xsede.org/
 [hpc-carpentry]: https://hpc-carpentry.github.io/
 [supercomputing-basics]: https://www.epa.gov/sciencematter/high-performance-computing-basics
-[pomona-college-hpc]: https://pomona.edu/hpc/
+[Pomona-College]: https://pomona.edu/hpc/
 [slurm-official-documentation]: https://slurm.schedmd.com/
 [slurm-quick-reference]: https://slurm.schedmd.com/pdfs/summary.pdf
 [job-arrays-tutorial]: https://slurm.schedmd.com/job_array.html
@@ -51,7 +51,7 @@
 [hpc-user-forums]: https://www.hpcuserforum.com/
 [discourse-hpc-carpentry]: https://discourse.carpentries.org/
 [stack-overflow]: https://stackoverflow.com/
-[github-issues]: https://github.com/pomona-college-hpc/parallel-computing/issues
+[github-issues]: https://github.com/Pomona-College/hpc-parallel-computing/issues
 [carpentries-discourse]: https://discourse.carpentries.org/
 [software-carpentry]: https://software-carpentry.org/
 [data-carpentry]: https://datacarpentry.org/

@@ -86,8 +86,8 @@ See [Contributing](#contributing) below.
 ### Support
 
 - **Email:** its-hpc@pomona.edu
-- **Issues:** https://github.com/pomona-college-hpc/parallel-computing/issues
-- **Discussions:** https://github.com/pomona-college-hpc/parallel-computing/discussions
+- **Issues:** https://github.com/Pomona-College/hpc-parallel-computing/issues
+- **Discussions:** https://github.com/Pomona-College/hpc-parallel-computing/discussions
 
 ### Acknowledgments
 
@@ -109,7 +109,7 @@ For any use, you must give appropriate credit and indicate if changes were made.
 
 We welcome contributions! To contribute:
 
-1. Fork the repository: https://github.com/pomona-college-hpc/parallel-computing
+1. Fork the repository: https://github.com/Pomona-College/hpc-parallel-computing
 2. Create a branch for your changes
 3. Make edits and test locally
 4. Submit a pull request with a clear description of changes

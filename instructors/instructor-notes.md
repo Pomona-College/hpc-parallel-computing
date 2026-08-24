@@ -451,7 +451,7 @@ This is a **pre-alpha workshop**. Your feedback improves it!
 - What's missing?
 
 ### How to Contribute
-- Submit issues: https://github.com/pomona-college-hpc/parallel-computing/issues
+- Submit issues: https://github.com/Pomona-College/hpc-parallel-computing/issues
 - Pull requests welcome
 - Contact: awilson@pomona.edu
 
