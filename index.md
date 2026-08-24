@@ -78,7 +78,7 @@ See [Contributing](#contributing) below.
 
 ### Quick Start
 
-1. Log into Sagehen: `ssh <username>@sagehen.pomona.edu`
+1. Log into Sagehen: `ssh <username>@sagehen.hpc.pomona.edu`
 2. Go through the episodes in order
 3. Complete the exercises and code-alongs
 4. Refer to the reference section for syntax reference
