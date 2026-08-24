@@ -112,7 +112,7 @@ For any use, you must give appropriate credit.
 
 **Last Updated:** March 6, 2026
 
-**Contact:** Andrew Wilson (awilson@pomona.edu)
+**Contact:** Andrew Wilson (andrew.wilson@pomona.edu)
 
 ## Acknowledgments
 

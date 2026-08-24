@@ -453,9 +453,9 @@ This is a **pre-alpha workshop**. Your feedback improves it!
 ### How to Contribute
 - Submit issues: https://github.com/Pomona-College/hpc-parallel-computing/issues
 - Pull requests welcome
-- Contact: awilson@pomona.edu
+- Contact: andrew.wilson@pomona.edu
 
 ---
 
 **Last Updated:** March 6, 2026
-**Contact:** Andrew Wilson (awilson@pomona.edu)
+**Contact:** Andrew Wilson (andrew.wilson@pomona.edu)
