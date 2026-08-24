@@ -1,0 +1,3 @@
+learning_rate=0.004
+batch_size=128
+epochs=14

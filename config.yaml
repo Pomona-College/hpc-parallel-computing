@@ -1,0 +1,33 @@
+---
+carpentry: 'incubator'
+title: 'Parallel Computing Fundamentals — Pomona College HPC Workshop Series'
+created: '2026-03-05'
+license: 'CC-BY 4.0'
+source: 'https://github.com/Pomona-College/hpc-parallel-computing'
+url: 'https://pomona-college.github.io/hpc-parallel-computing/'
+contact: 'its-hpc@pomona.edu'
+description: 'Scaling research code from one core to many — shared and distributed memory, job arrays, GNU Parallel and MPI on Sagehen.'
+branch: 'main'
+life_cycle: 'stable'
+keywords: 'Pomona College, HPC, research computing, parallel-computing, slurm, shared-memory, distributed-memory, mpi, openmp, job-arrays, sagehen'
+episodes:
+- 01-why-parallel-computing.md
+- 02-amdahls-law.md
+- 03-types-of-parallelism.md
+- 04-embarrassingly-parallel.md
+- 05-gnu-parallel.md
+- 06-slurm-job-arrays.md
+- 07-advanced-job-arrays.md
+- 08-shared-memory-openmp.md
+- 09-threading-python.md
+- 10-distributed-concepts.md
+- 11-mpi-basics.md
+- 12-choosing-approach.md
+learners:
+- reference.md
+- setup.md
+- learner-profiles.md
+instructors:
+- instructor-notes.md
+profiles:
+- learner-profiles.md
