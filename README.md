@@ -7,7 +7,7 @@ A comprehensive Carpentries Workbench workshop on parallel computing for researc
 This workshop teaches how to scale research computations from single-core to multi-core and multi-node environments.
 
 ### For Students
-1. [Start here: Why Go Parallel?](episodes/01-why-parallel.md)
+1. [Start here: Why Parallel Computing?](episodes/01-why-parallel-computing.md)
 2. Follow episodes in order
 3. Complete hands-on exercises
 4. Parallelize your own code
@@ -20,15 +20,20 @@ This workshop teaches how to scale research computations from single-core to mul
 
 ## Workshop Contents
 
-### Episodes (7 total, ~12 hours)
+### Episodes (12 total, ~6 hours)
 
-1. **[Why Go Parallel?](episodes/01-why-parallel.md)**: Understanding speedup, efficiency, and Amdahl's Law
-2. **[Types of Parallelism](episodes/02-types-of-parallelism.md)**: Shared-memory vs distributed-memory vs embarrassingly parallel
-3. **[Embarrassingly Parallel Problems](episodes/03-embarrassingly-parallel.md)**: Parameter sweeps, Monte Carlo, batch processing
-4. **[Running Job Arrays in SLURM](episodes/04-slurm-job-arrays.md)**: Practical job arrays with --array flag
-5. **[Shared-Memory Parallelism](episodes/05-shared-memory.md)**: Python multiprocessing and R parallel
-6. **[Distributed Computing with MPI](episodes/06-distributed-computing.md)**: Multi-node computing basics
-7. **[Choosing Your Strategy](episodes/07-choosing-approach.md)**: Decision framework and best practices
+1. **[Why Parallel Computing?](episodes/01-why-parallel-computing.md)**: Speedup, efficiency, and when parallelism pays off
+2. **[Amdahl's Law and Speedup](episodes/02-amdahls-law.md)**: Amdahl's Law and the limits of speedup
+3. **[Types of Parallelism](episodes/03-types-of-parallelism.md)**: Shared-memory vs distributed-memory vs embarrassingly parallel
+4. **[Embarrassingly Parallel Problems](episodes/04-embarrassingly-parallel.md)**: Parameter sweeps, Monte Carlo, batch processing
+5. **[GNU Parallel and Shell Parallelism](episodes/05-gnu-parallel.md)**: GNU Parallel and shell-level parallelism
+6. **[SLURM Job Arrays](episodes/06-slurm-job-arrays.md)**: Practical job arrays with the --array flag
+7. **[Advanced Job Arrays](episodes/07-advanced-job-arrays.md)**: Throttling, dependencies, and array patterns
+8. **[Shared Memory with OpenMP](episodes/08-shared-memory-openmp.md)**: OpenMP and multi-core work on one node
+9. **[Threading in Python and R Parallelism](episodes/09-threading-python.md)**: Python multiprocessing and R parallel
+10. **[Distributed Computing Concepts](episodes/10-distributed-concepts.md)**: Multi-node computing concepts
+11. **[MPI Basics](episodes/11-mpi-basics.md)**: MPI fundamentals on Sagehen
+12. **[Choosing the Right Approach](episodes/12-choosing-approach.md)**: Decision framework and best practices
 
 ### Supporting Materials
 
@@ -120,4 +125,4 @@ Developed with support from Pomona College High-Performance Computing team and b
 
 ---
 
-**Ready to start?** Begin with [Episode 1: Why Go Parallel?](episodes/01-why-parallel.md)
+**Ready to start?** Begin with [Episode 1: Why Parallel Computing?](episodes/01-why-parallel-computing.md)
