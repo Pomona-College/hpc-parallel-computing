@@ -46,6 +46,12 @@
     <loc>https://pomona-college.github.io/hpc-parallel-computing/LICENSE.html</loc>
   </url>
   <url>
+    <loc>https://pomona-college.github.io/hpc-parallel-computing/aio.html</loc>
+  </url>
+  <url>
+    <loc>https://pomona-college.github.io/hpc-parallel-computing/images.html</loc>
+  </url>
+  <url>
     <loc>https://pomona-college.github.io/hpc-parallel-computing/index.html</loc>
   </url>
   <url>
@@ -94,7 +100,19 @@
     <loc>https://pomona-college.github.io/hpc-parallel-computing/instructor/LICENSE.html</loc>
   </url>
   <url>
+    <loc>https://pomona-college.github.io/hpc-parallel-computing/instructor/aio.html</loc>
+  </url>
+  <url>
+    <loc>https://pomona-college.github.io/hpc-parallel-computing/instructor/images.html</loc>
+  </url>
+  <url>
     <loc>https://pomona-college.github.io/hpc-parallel-computing/instructor/index.html</loc>
+  </url>
+  <url>
+    <loc>https://pomona-college.github.io/hpc-parallel-computing/instructor/instructor-notes.html</loc>
+  </url>
+  <url>
+    <loc>https://pomona-college.github.io/hpc-parallel-computing/instructor/key-points.html</loc>
   </url>
   <url>
     <loc>https://pomona-college.github.io/hpc-parallel-computing/instructor/learner-profiles.html</loc>
@@ -107,6 +125,12 @@
   </url>
   <url>
     <loc>https://pomona-college.github.io/hpc-parallel-computing/instructor/setup.html</loc>
+  </url>
+  <url>
+    <loc>https://pomona-college.github.io/hpc-parallel-computing/instructor-notes.html</loc>
+  </url>
+  <url>
+    <loc>https://pomona-college.github.io/hpc-parallel-computing/key-points.html</loc>
   </url>
   <url>
     <loc>https://pomona-college.github.io/hpc-parallel-computing/learner-profiles.html</loc>
