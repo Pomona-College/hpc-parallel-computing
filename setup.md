@@ -26,7 +26,7 @@ If you don't have an account on Sagehen:
 From your local machine:
 
 ```bash
-ssh <myusername>@sagehen.pomona.edu
+ssh <myusername>@sagehen.hpc.pomona.edu
 ```
 
 ## Creating Your Working Directory
