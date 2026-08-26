@@ -67,6 +67,8 @@ For each scenario, calculate the theoretical speedup on 8 processors:
 ::::::::::::::::::::::::::::::::::::::::::::::::
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
+![The serial fraction sets a floor no amount of hardware can get below.](fig/08-amdahl.png){alt="Two panels illustrating Amdahl's Law. On the left, code is split into a serial portion of twenty percent that cannot be parallelised and a parallel portion of eighty percent that can use many cores. On the right, total time as cores increase: one core takes one hundred percent, four cores take twenty plus eighty over four equals forty percent, sixteen cores take twenty plus eighty over sixteen equals twenty-five percent, and infinite cores still take twenty percent because the serial portion remains."}
+
 ## Measuring in Practice
 
 ```bash

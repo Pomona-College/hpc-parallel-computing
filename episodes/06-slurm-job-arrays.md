@@ -82,6 +82,8 @@ Or just submit with `--array=0-99` instead of `--array=1-100`. Pick a convention
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
+![One sbatch command creates a hundred independent jobs, each told which slice of the work it owns.](fig/04-job-arrays.png){alt='A flow diagram. The command sbatch --array=1-100 my_script.sh causes SLURM to create 100 independent jobs, which run in parallel. Job 1 has SLURM_ARRAY_TASK_ID equal to 1, Job 2 has 2, and Job 100 has 100. All of them feed into a step that combines the results. A caption notes that each job reads its own SLURM_ARRAY_TASK_ID and works on that slice of the problem.'}
+
 ## Practical Examples
 
 ### Parameter Sweep

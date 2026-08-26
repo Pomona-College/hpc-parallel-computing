@@ -38,6 +38,8 @@ If you answered YES to all four, use job arrays!
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
+![If the tasks are independent and the results can be combined afterwards, a job array is all you need.](fig/03-embarrassingly-parallel.png){alt='A decision tree starting from the question, is my problem embarrassingly parallel. If the tasks are not independent, the answer is that it is not embarrassingly parallel and MPI is covered in episode 11. If they are independent, the next question is whether results can be combined afterwards; if yes, use a SLURM job array with sbatch --array=1-100, and if no, restructure the problem first.'}
+
 ## Common Patterns
 
 ### Pattern 1: Parameter Sweeps

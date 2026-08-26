@@ -135,6 +135,8 @@ if rank == 0:
 
 This is a classic MPI pattern: each rank gets disjoint work derived from its rank ID, computes locally, and contributes to a final reduction. There is no inter-rank communication during the actual computation, only at the end. This minimizes communication and gives near-linear scaling.
 
+![The four collective operations, and which direction the data moves in each.](fig/06-mpi-operations.png){alt='Four panels showing MPI collective operations. Reduce sums values 3, 7 and 2 from ranks 1 to 3 into 12 on rank 0. Gather collects B, C and D from ranks 1 to 3 into A B C D on rank 0. Scatter sends the parts of A B C D from rank 0 out to ranks 1, 2 and 3. Broadcast copies the value A from rank 0 to all three other ranks.'}
+
 ## MPI Performance Considerations
 
 MPI scales well only if:

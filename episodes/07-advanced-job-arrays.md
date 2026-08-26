@@ -89,6 +89,8 @@ print(f"Wrote {len(settings) * len(colors)} parameter combinations")
 
 The file approach decouples parameter generation from the SLURM script. You can review the file before submission, modify combinations without changing the script, and replicate the exact same sweep later by saving the file in version control.
 
+![A parameter sweep is a job array over a list of settings, one line per combination.](fig/05-parameter-sweep.png){alt='A five-step flow. Define the parameters, for example learning rate values of 0.001, 0.01 and 0.1 and batch sizes of 32, 64 and 128. Write them to a parameter file with nine combinations, one per line. Submit one array job with sbatch --array=1-9 sweep.sh. Each task reads the line matching its SLURM_ARRAY_TASK_ID and runs that experiment. Finally, collect the results and pick the best.'}
+
 ## Using argparse with Job Arrays
 
 The SLURM script handles index-to-parameter mapping, but the actual training script should accept parameters as command-line arguments using `argparse`:
