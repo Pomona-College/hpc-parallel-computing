@@ -386,7 +386,7 @@ Summative assessment (end of workshop):
 - 1:00-1:30: Live submission + monitoring
 - 1:30-2:00: Exercises
 
-*Homework:* Submit job array to Sagehen
+*Homework:* Submit job array to Sagehen HPC
 
 ### Session 4 (Episode 5): Shared Memory
 - 0:00-0:10: Review

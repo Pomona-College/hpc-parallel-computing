@@ -58,7 +58,7 @@ Run with SLURM:
 srun python3 hello_mpi.py
 ```
 
-The key SLURM directive is `--ntasks=4`, which tells SLURM to launch 4 MPI processes. Use `srun` (not `mpirun`) to launch on Sagehen because `srun` knows about SLURM's allocation and places ranks correctly across nodes.
+The key SLURM directive is `--ntasks=4`, which tells SLURM to launch 4 MPI processes. Use `srun` (not `mpirun`) to launch on Sagehen HPC because `srun` knows about SLURM's allocation and places ranks correctly across nodes.
 
 ## Distributed Sum
 

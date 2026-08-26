@@ -79,7 +79,7 @@ title: Learner Profiles
 - New to large-scale HPC
 
 **Pain Point:**
-"I know how to parallelize on my laptop, but how do I scale to 128 cores on Sagehen without rewriting everything?"
+"I know how to parallelize on my laptop, but how do I scale to 128 cores on Sagehen HPC without rewriting everything?"
 
 **Expected Outcome After Workshop:**
 - Understand how to scale R's parallel package to a full Sagehen node (128 cores)

@@ -32,7 +32,7 @@ This workshop teaches how to scale research computations from single-core to mul
 8. **[Shared Memory with OpenMP](episodes/08-shared-memory-openmp.md)**: OpenMP and multi-core work on one node
 9. **[Threading in Python and R Parallelism](episodes/09-threading-python.md)**: Python multiprocessing and R parallel
 10. **[Distributed Computing Concepts](episodes/10-distributed-concepts.md)**: Multi-node computing concepts
-11. **[MPI Basics](episodes/11-mpi-basics.md)**: MPI fundamentals on Sagehen
+11. **[MPI Basics](episodes/11-mpi-basics.md)**: MPI fundamentals on Sagehen HPC
 12. **[Choosing the Right Approach](episodes/12-choosing-approach.md)**: Decision framework and best practices
 
 ### Supporting Materials

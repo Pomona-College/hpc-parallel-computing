@@ -94,7 +94,7 @@ title: Learner Profiles
 - Want to scale to 128-core node
 
 **Pain Point:**
-- "How do I use all 128 cores on Sagehen?"
+- "How do I use all 128 cores on Sagehen HPC?"
 
 **Expected Outcome:**
 - Use R's parallel package with SLURM

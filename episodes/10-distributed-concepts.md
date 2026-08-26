@@ -7,7 +7,7 @@ exercises: 5
 ::::::::::::::::::::::::::::::::::::: questions
 - When do I need distributed-memory computing?
 - What is MPI and how does it work?
-- How do I run MPI programs on Sagehen?
+- How do I run MPI programs on Sagehen HPC?
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives

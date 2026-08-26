@@ -54,7 +54,7 @@ This workshop consists of 7 episodes covering:
 
 ::::::
 
-### The Sagehen Cluster
+### The Sagehen HPC Cluster
 
 Examples in this workshop use the **Sagehen** HPC cluster at Pomona College:
 

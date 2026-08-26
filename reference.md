@@ -207,7 +207,7 @@ my_data = comm.scatter(data, root=0)
 comm.Barrier()
 ```
 
-## Sagehen Cluster Specifications
+## Sagehen HPC Cluster Specifications
 
 - **Nodes:** 12 AMD EPYC nodes
 - **Cores:** 128 cores per node (1,536 total)

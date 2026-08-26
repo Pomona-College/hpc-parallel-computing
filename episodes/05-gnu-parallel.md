@@ -21,7 +21,7 @@ exercises: 25
 
 ## Why Shell-Level Parallelism
 
-Before reaching for SLURM, the simplest parallelism is running multiple commands at once on a single node. Sagehen `amd` nodes have 128 cores; if you only need to process a few hundred files and each takes a few seconds, running 64 in parallel on one node finishes faster than the SLURM queue takes to schedule a job array.
+Before reaching for SLURM, the simplest parallelism is running multiple commands at once on a single node. Sagehen HPC `amd` nodes have 128 cores; if you only need to process a few hundred files and each takes a few seconds, running 64 in parallel on one node finishes faster than the SLURM queue takes to schedule a job array.
 
 Shell parallelism shines for:
 
