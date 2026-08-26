@@ -121,3 +121,9 @@ See the [Instructor Notes](instructors/instructor-notes.md) for guidance on work
 **Current Status:** Pre-alpha  
 **Last Updated:** March 6, 2026  
 **Contact:** Andrew Wilson (andrew.wilson@pomona.edu)
+
+## Acknowledgments
+
+Developed by **Andrew Wilson**, Director of Research Computing and Digital
+Scholarship at Pomona College, with **Andrei Motchenko**, who tested, edited
+and produced screenshots for the workshop series.
