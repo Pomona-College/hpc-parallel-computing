@@ -249,7 +249,7 @@ The transition is mechanical: a SLURM array's `$SLURM_ARRAY_TASK_ID` plays the r
 ::::::::::::::::::::::::::::::::::::: callout
 **Common pitfall: parallel reads from /bigdata**
 
-Running `parallel -j 32` where every task reads from `/bigdata` can saturate the NFS mount and slow every job on the node. If your tasks read shared input data, copy it to `/scratch` once at the start and have all parallel tasks read from there.
+Running `parallel -j 32` where every task reads from `/bigdata` can saturate the shared BeeGFS filesystem and slow every job using it. If your tasks read shared input data, copy it to `/scratch` once at the start and have all parallel tasks read from there.
 
 ```bash
 # Stage shared input once

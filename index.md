@@ -32,7 +32,7 @@ No prior parallel computing experience is required.
 
 ### Workshop Structure
 
-This workshop consists of 7 episodes covering:
+This workshop consists of 12 episodes covering:
 
 1. **Why Go Parallel?**: Understanding speedup, efficiency, and when parallelism helps
 2. **Types of Parallelism**: Shared-memory vs distributed-memory vs embarrassingly parallel

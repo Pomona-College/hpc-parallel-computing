@@ -13,7 +13,7 @@ This workshop is designed for researchers who want to scale up their research co
 
 ## Workshop Overview
 
-- **Total duration:** 12 hours (typically delivered as 6 x 2-hour sessions or 3 full days)
+- **Total duration:** about 6 hours (typically delivered as 3 x 2-hour sessions or 1 full day)
 - **Format:** Interactive lecture + hands-on exercises
 - **Audience:** Researchers who run mostly single-core jobs; no parallel computing experience assumed
 - **Outcomes:** Students should be able to identify and parallelize embarrassingly parallel problems using job arrays
