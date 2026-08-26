@@ -15,8 +15,8 @@ This workshop teaches how to scale research computations from single-core to mul
 ### For Instructors
 1. See [Instructor Notes](instructors/instructor-notes.md) for detailed teaching guidance
 2. Use [Learner Profiles](learners/learner-profiles.md) to understand your audience
-3. Review [Setup](setup.md) for classroom preparation
-4. Check [Reference](reference.md) for quick syntax lookups
+3. Review [Setup](learners/setup.md) for classroom preparation
+4. Check [Reference](learners/reference.md) for quick syntax lookups
 
 ## Workshop Contents
 
@@ -37,8 +37,8 @@ This workshop teaches how to scale research computations from single-core to mul
 
 ### Supporting Materials
 
-- **[Setup Guide](setup.md)**: Getting started on Sagehen
-- **[Quick Reference](reference.md)**: Syntax and command reference
+- **[Setup Guide](learners/setup.md)**: Getting started on Sagehen
+- **[Quick Reference](learners/reference.md)**: Syntax and command reference
 - **[Instructor Notes](instructors/instructor-notes.md)**: Detailed teaching guidance
 - **[Learner Profiles](learners/learner-profiles.md)**: Who we're teaching
 
