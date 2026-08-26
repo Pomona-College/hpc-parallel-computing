@@ -26,7 +26,6 @@ episodes:
 learners:
 - reference.md
 - setup.md
-- learner-profiles.md
 instructors:
 - instructor-notes.md
 profiles:
