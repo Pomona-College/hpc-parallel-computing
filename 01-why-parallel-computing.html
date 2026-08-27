@@ -366,7 +366,7 @@
       </div>
     </nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Why Parallel Computing?</h1>
-        <p>Last updated on 2026-08-24 |
+        <p>Last updated on 2026-08-27 |
 
         <a href="https://github.com/Pomona-College/hpc-parallel-computing/edit/main/episodes/01-why-parallel-computing.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -422,7 +422,10 @@ Task C: [===]
 Total time: 10 seconds</code></pre>
 <p><strong>Parallelism trades computational work across multiple
 processors to reduce wall clock time.</strong></p>
-</div>
+<figure><img src="fig/01-serial-vs-parallel.png" alt="Two panels. On the left, serial execution: Task A, Task B and Task C each take two hours and run one after another, giving a total of six hours. On the right, parallel execution: the same three tasks run at the same time and all feed into a total of two hours, with a note that the job finishes when the slowest task does." class="figure mx-auto d-block"><div class="figcaption">Three independent two-hour tasks: run one after
+another and the job takes six hours; run them at the same time and it
+takes two.</div>
+</figure></div>
 </section><section><h2 class="section-heading" id="understanding-speedup-and-efficiency">Understanding Speedup and Efficiency<a class="anchor" aria-label="anchor" href="#understanding-speedup-and-efficiency"></a></h2>
 <hr class="half-width"><div class="section level3">
 <h3 id="speedup">Speedup<a class="anchor" aria-label="anchor" href="#speedup"></a></h3>
@@ -494,7 +497,7 @@ takes 50s (parallelizable), writing output takes 10s (serial). Total:
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>Serial fraction = (50 + 10) / 110 = 55%. Only the 50s processing can
 be parallelized.</p>
@@ -581,8 +584,8 @@ clock time</li>
   "url": "https://pomona-college.github.io/hpc-parallel-computing/01-why-parallel-computing.html",
   "identifier": "https://pomona-college.github.io/hpc-parallel-computing/01-why-parallel-computing.html",
   "dateCreated": "2026-03-05",
-  "dateModified": "2026-08-24",
-  "datePublished": "2026-08-26"
+  "dateModified": "2026-08-27",
+  "datePublished": "2026-08-27"
 }
 
   </script><script>

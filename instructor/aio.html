@@ -426,7 +426,7 @@
         
 <section id="aio-01-why-parallel-computing"><p>Content from <a href="01-why-parallel-computing.html">Why Parallel Computing?</a></p>
 <hr>
-<p>Last updated on 2026-08-24 |
+<p>Last updated on 2026-08-27 |
 
         <a href="https://github.com/Pomona-College/hpc-parallel-computing/edit/main/episodes/01-why-parallel-computing.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 20 minutes</p>
@@ -484,6 +484,10 @@ Task C: [===]
 Total time: 10 seconds</code></pre>
 <p><strong>Parallelism trades computational work across multiple
 processors to reduce wall clock time.</strong></p>
+<figure><img src="../fig/01-serial-vs-parallel.png" alt="Two panels. On the left, serial execution: Task A, Task B and Task C each take two hours and run one after another, giving a total of six hours. On the right, parallel execution: the same three tasks run at the same time and all feed into a total of two hours, with a note that the job finishes when the slowest task does." class="figure mx-auto d-block"><div class="figcaption">Three independent two-hour tasks: run one after
+another and the job takes six hours; run them at the same time and it
+takes two.</div>
+</figure>
 </div>
 </section><section><h2 class="section-heading" id="understanding-speedup-and-efficiency">Understanding Speedup and Efficiency<a class="anchor" aria-label="anchor" href="#understanding-speedup-and-efficiency"></a>
 </h2>
@@ -565,7 +569,7 @@ takes 50s (parallelizable), writing output takes 10s (serial). Total:
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>Serial fraction = (50 + 10) / 110 = 55%. Only the 50s processing can
 be parallelized.</p>
@@ -596,7 +600,7 @@ clock time</li>
 </div>
 </section></section><section id="aio-02-amdahls-law"><p>Content from <a href="02-amdahls-law.html">Amdahl's Law and Speedup</a></p>
 <hr>
-<p>Last updated on 2026-08-24 |
+<p>Last updated on 2026-08-27 |
 
         <a href="https://github.com/Pomona-College/hpc-parallel-computing/edit/main/episodes/02-amdahls-law.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 20 minutes</p>
@@ -692,7 +696,7 @@ processors:</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p><strong>Scenario 1:</strong> <span class="math inline">\(S_8 =
 1/0.1338 = 7.48\)</span> (93.5% efficiency)</p>
@@ -704,6 +708,9 @@ processors:</p>
 </div>
 </div>
 </div>
+<figure><img src="../fig/08-amdahl.png" alt="Two panels illustrating Amdahl's Law. On the left, code is split into a serial portion of twenty percent that cannot be parallelised and a parallel portion of eighty percent that can use many cores. On the right, total time as cores increase: one core takes one hundred percent, four cores take twenty plus eighty over four equals forty percent, sixteen cores take twenty plus eighty over sixteen equals twenty-five percent, and infinite cores still take twenty percent because the serial portion remains." class="figure mx-auto d-block"><div class="figcaption">The serial fraction sets a floor no amount of
+hardware can get below.</div>
+</figure>
 </div>
 </section><section><h2 class="section-heading" id="measuring-in-practice">Measuring in Practice<a class="anchor" aria-label="anchor" href="#measuring-in-practice"></a>
 </h2>
@@ -753,7 +760,7 @@ complexity</li>
 </div>
 </section></section><section id="aio-03-types-of-parallelism"><p>Content from <a href="03-types-of-parallelism.html">Types of Parallelism</a></p>
 <hr>
-<p>Last updated on 2026-08-24 |
+<p>Last updated on 2026-08-27 |
 
         <a href="https://github.com/Pomona-College/hpc-parallel-computing/edit/main/episodes/03-types-of-parallelism.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 20 minutes</p>
@@ -771,7 +778,7 @@ complexity</li>
 <li>What is the difference between shared memory and distributed
 memory?</li>
 <li>What is data parallelism vs task parallelism?</li>
-<li>How does Sagehen’s architecture combine both?</li>
+<li>How does Sagehen HPC’s architecture combine both?</li>
 </ul>
 </div>
 </div>
@@ -824,9 +831,13 @@ requires explicit message passing:</p>
 synchronization. <strong>Challenges:</strong> Higher latency, explicit
 communication code. <strong>Examples:</strong> MPI, Spark, distributed
 databases.</p>
+<figure><img src="../fig/02-shared-vs-distributed.png" alt="Two panels. Shared memory on one node shows four cores all reading the same 500 GB of RAM, used by OpenMP, threading and multiprocessing, with a note that all 128 cores on a node share that memory. Distributed memory across many nodes shows Node A and Node B, each with 128 cores and their own RAM, connected through a network, with a note that data must be sent explicitly using MPI." class="figure mx-auto d-block"><div class="figcaption">Shared memory keeps everything in one address
+space; distributed memory makes you send data across the network
+yourself.</div>
+</figure>
 </div>
 <div class="section level3">
-<h3 id="sagehens-hybrid-architecture">Sagehen’s Hybrid Architecture<a class="anchor" aria-label="anchor" href="#sagehens-hybrid-architecture"></a>
+<h3 id="sagehen-hpcs-hybrid-architecture">Sagehen HPC’s Hybrid Architecture<a class="anchor" aria-label="anchor" href="#sagehen-hpcs-hybrid-architecture"></a>
 </h3>
 <p>Sagehen uses both: - <strong>Within a node:</strong> 128 cores
 sharing 512GB RAM (shared memory) - <strong>Between nodes:</strong> 12
@@ -966,7 +977,7 @@ level</li>
 </div>
 </section></section><section id="aio-04-embarrassingly-parallel"><p>Content from <a href="04-embarrassingly-parallel.html">Embarrassingly Parallel Problems</a></p>
 <hr>
-<p>Last updated on 2026-08-24 |
+<p>Last updated on 2026-08-27 |
 
         <a href="https://github.com/Pomona-College/hpc-parallel-computing/edit/main/episodes/04-embarrassingly-parallel.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 20 minutes</p>
@@ -1041,7 +1052,9 @@ very good)</li>
 </div>
 </div>
 </div>
-</section><section><h2 class="section-heading" id="common-patterns">Common Patterns<a class="anchor" aria-label="anchor" href="#common-patterns"></a>
+<figure><img src="../fig/03-embarrassingly-parallel.png" alt="A decision tree starting from the question, is my problem embarrassingly parallel. If the tasks are not independent, the answer is that it is not embarrassingly parallel and MPI is covered in episode 11. If they are independent, the next question is whether results can be combined afterwards; if yes, use a SLURM job array with sbatch --array=1-100, and if no, restructure the problem first." class="figure mx-auto d-block"><div class="figcaption">If the tasks are independent and the results can
+be combined afterwards, a job array is all you need.</div>
+</figure></section><section><h2 class="section-heading" id="common-patterns">Common Patterns<a class="anchor" aria-label="anchor" href="#common-patterns"></a>
 </h2>
 <hr class="half-width">
 <div class="section level3">
@@ -1195,7 +1208,7 @@ valuable</li>
 </div>
 </section></section><section id="aio-05-gnu-parallel"><p>Content from <a href="05-gnu-parallel.html">GNU Parallel and Shell Parallelism</a></p>
 <hr>
-<p>Last updated on 2026-08-24 |
+<p>Last updated on 2026-08-27 |
 
         <a href="https://github.com/Pomona-College/hpc-parallel-computing/edit/main/episodes/05-gnu-parallel.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 50 minutes</p>
@@ -1245,7 +1258,7 @@ arrays</li>
 </h2>
 <hr class="half-width">
 <p>Before reaching for SLURM, the simplest parallelism is running
-multiple commands at once on a single node. Sagehen <code>amd</code>
+multiple commands at once on a single node. Sagehen HPC <code>amd</code>
 nodes have 128 cores; if you only need to process a few hundred files
 and each takes a few seconds, running 64 in parallel on one node
 finishes faster than the SLURM queue takes to schedule a job array.</p>
@@ -1279,7 +1292,10 @@ limit. If the loop has 1000 iterations, you spawn 1000 processes at once
 and the node falls over. Second, output from all jobs interleaves on
 stdout in unpredictable order. Third, there is no easy way to know which
 iteration failed.</p>
-</section><section><h2 class="section-heading" id="gnu-parallel-the-better-default">GNU Parallel: The Better Default<a class="anchor" aria-label="anchor" href="#gnu-parallel-the-better-default"></a>
+<figure><img src="../fig/05-gnu-parallel-not-installed.png" alt="Terminal on Sagehen HPC. The command module avail parallel returns No module(s) or extension(s) found, followed by the usual Lmod suggestions to try module --default avail or module spider." class="figure mx-auto d-block"><div class="figcaption">Checked on Sagehen HPC: there is no
+<code>parallel</code> module, which is why the episode installs it into
+your own conda environment.</div>
+</figure></section><section><h2 class="section-heading" id="gnu-parallel-the-better-default">GNU Parallel: The Better Default<a class="anchor" aria-label="anchor" href="#gnu-parallel-the-better-default"></a>
 </h2>
 <hr class="half-width">
 <p>GNU Parallel solves all three problems. It is <strong>not</strong>
@@ -1540,8 +1556,8 @@ to change. The next episode covers the SLURM side.</p>
 <div class="callout-content">
 <p><strong>Common pitfall: parallel reads from /bigdata</strong></p>
 <p>Running <code>parallel -j 32</code> where every task reads from
-<code>/bigdata</code> can saturate the NFS mount and slow every job on
-the node. If your tasks read shared input data, copy it to
+<code>/bigdata</code> can saturate the shared BeeGFS filesystem and slow
+every job using it. If your tasks read shared input data, copy it to
 <code>/scratch</code> once at the start and have all parallel tasks read
 from there.</p>
 <div class="codewrapper sourceCode" id="cb14">
@@ -1693,7 +1709,7 @@ one node or run for many hours</li>
 <!-- highlight <labname>/<myusername> placeholders in code blocks; remove if the varnish theme handles this natively -->
 <script>(function(){var CSS='.sh-placeholder{color:#c2410c;font-weight:700}[data-bs-theme="dark"] .sh-placeholder,html.dark .sh-placeholder{color:#fdba74}@media (prefers-color-scheme: dark){[data-bs-theme="auto"] .sh-placeholder{color:#fdba74}}';var RX=/<labname>|<myusername>/g;function firstMatch(el){var w=document.createTreeWalker(el,NodeFilter.SHOW_TEXT,null),nodes=[],full='';while(w.nextNode()){nodes.push({n:w.currentNode,s:full.length});full+=w.currentNode.nodeValue;}RX.lastIndex=0;var m;while((m=RX.exec(full))){var s=m.index,e=s+m[0].length,inSpan=false,parts=[];for(var j=0;j<nodes.length;j++){var ns=nodes[j].s,ne=ns+nodes[j].n.nodeValue.length;if(ne<=s||ns>=e)continue;parts.push({node:nodes[j].n,a:Math.max(s-ns,0),b:Math.min(e-ns,nodes[j].n.nodeValue.length)});var p=nodes[j].n.parentNode;while(p&&p!==el){if(p.classList&&p.classList.contains('sh-placeholder')){inSpan=true;break;}p=p.parentNode;}}if(!inSpan&&parts.length)return parts;}return null;}function wrapParts(parts){for(var i=parts.length-1;i>=0;i--){var t=parts[i].node,txt=t.nodeValue,a=parts[i].a,b=parts[i].b;var span=document.createElement('span');span.className='sh-placeholder';span.textContent=txt.slice(a,b);var f=document.createDocumentFragment();if(a>0)f.appendChild(document.createTextNode(txt.slice(0,a)));f.appendChild(span);if(b<txt.length)f.appendChild(document.createTextNode(txt.slice(b)));t.parentNode.replaceChild(f,t);}}function run(){var st=document.createElement('style');st.textContent=CSS;document.head.appendChild(st);document.querySelectorAll('pre,code').forEach(function(el){var guard=0,parts;while((parts=firstMatch(el))&&guard++<500){wrapParts(parts);}});}if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',run);}else{run();}})();</script></section></section><section id="aio-06-slurm-job-arrays"><p>Content from <a href="06-slurm-job-arrays.html">SLURM Job Arrays</a></p>
 <hr>
-<p>Last updated on 2026-08-24 |
+<p>Last updated on 2026-08-27 |
 
         <a href="https://github.com/Pomona-College/hpc-parallel-computing/edit/main/episodes/06-slurm-job-arrays.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 45 minutes</p>
@@ -1827,6 +1843,9 @@ your scripts.</p>
 </div>
 </div>
 </div>
+<figure><img src="../fig/04-job-arrays.png" alt="A flow diagram. The command sbatch --array=1-100 my_script.sh causes SLURM to create 100 independent jobs, which run in parallel. Job 1 has SLURM_ARRAY_TASK_ID equal to 1, Job 2 has 2, and Job 100 has 100. All of them feed into a step that combines the results. A caption notes that each job reads its own SLURM_ARRAY_TASK_ID and works on that slice of the problem." class="figure mx-auto d-block"><div class="figcaption">One sbatch command creates a hundred independent
+jobs, each told which slice of the work it owns.</div>
+</figure>
 </div>
 </section><section><h2 class="section-heading" id="practical-examples">Practical Examples<a class="anchor" aria-label="anchor" href="#practical-examples"></a>
 </h2>
@@ -2052,7 +2071,7 @@ redoing the rest</li>
 </div>
 </section></section><section id="aio-07-advanced-job-arrays"><p>Content from <a href="07-advanced-job-arrays.html">Advanced Job Arrays</a></p>
 <hr>
-<p>Last updated on 2026-08-24 |
+<p>Last updated on 2026-08-27 |
 
         <a href="https://github.com/Pomona-College/hpc-parallel-computing/edit/main/episodes/07-advanced-job-arrays.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 35 minutes</p>
@@ -2170,6 +2189,9 @@ a parameter file once and look up by line number:</p>
 script. You can review the file before submission, modify combinations
 without changing the script, and replicate the exact same sweep later by
 saving the file in version control.</p>
+<figure><img src="../fig/05-parameter-sweep.png" alt="A five-step flow. Define the parameters, for example learning rate values of 0.001, 0.01 and 0.1 and batch sizes of 32, 64 and 128. Write them to a parameter file with nine combinations, one per line. Submit one array job with sbatch --array=1-9 sweep.sh. Each task reads the line matching its SLURM_ARRAY_TASK_ID and runs that experiment. Finally, collect the results and pick the best." class="figure mx-auto d-block"><div class="figcaption">A parameter sweep is a job array over a list of
+settings, one line per combination.</div>
+</figure>
 </div>
 </section><section><h2 class="section-heading" id="using-argparse-with-job-arrays">Using argparse with Job Arrays<a class="anchor" aria-label="anchor" href="#using-argparse-with-job-arrays"></a>
 </h2>
@@ -2408,7 +2430,7 @@ clusters</li>
 </div>
 </section></section><section id="aio-08-shared-memory-openmp"><p>Content from <a href="08-shared-memory-openmp.html">Shared Memory with OpenMP</a></p>
 <hr>
-<p>Last updated on 2026-08-24 |
+<p>Last updated on 2026-08-27 |
 
         <a href="https://github.com/Pomona-College/hpc-parallel-computing/edit/main/episodes/08-shared-memory-openmp.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 40 minutes</p>
@@ -2450,7 +2472,7 @@ clusters</li>
 <section><h2 class="section-heading" id="shared-memory-parallelism-in-context">Shared-Memory Parallelism in Context<a class="anchor" aria-label="anchor" href="#shared-memory-parallelism-in-context"></a>
 </h2>
 <hr class="half-width">
-<p>Sagehen’s <code>amd</code> nodes have 128 cores and 512 GB of RAM
+<p>Sagehen HPC’s <code>amd</code> nodes have 128 cores and 512 GB of RAM
 each. Shared-memory parallelism uses multiple cores on one node, all
 reading and writing to the same memory pool. This is in contrast to
 distributed parallelism (next two episodes), which uses many nodes
@@ -2793,7 +2815,7 @@ further</li>
 </div>
 </section></section><section id="aio-09-threading-python"><p>Content from <a href="09-threading-python.html">Threading in Python and R Parallelism</a></p>
 <hr>
-<p>Last updated on 2026-08-24 |
+<p>Last updated on 2026-08-27 |
 
         <a href="https://github.com/Pomona-College/hpc-parallel-computing/edit/main/episodes/09-threading-python.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 35 minutes</p>
@@ -2896,8 +2918,8 @@ have a GIL. R’s <code>parLapply</code> is closer in spirit to Python’s
 </div>
 <p>The <code>makeCluster</code> / <code>stopCluster</code> pair is
 mandatory: without <code>stopCluster</code>, the worker processes leak
-and stay around until the R session ends. On Sagehen, leaked workers can
-fill up the node’s process table and cause subsequent jobs to fail
+and stay around until the R session ends. On Sagehen HPC, leaked workers
+can fill up the node’s process table and cause subsequent jobs to fail
 mysteriously.</p>
 </div>
 <div class="section level3">
@@ -3175,7 +3197,7 @@ runtime</li>
 </div>
 </section></section><section id="aio-10-distributed-concepts"><p>Content from <a href="10-distributed-concepts.html">Distributed Computing Concepts</a></p>
 <hr>
-<p>Last updated on 2026-08-24 |
+<p>Last updated on 2026-08-27 |
 
         <a href="https://github.com/Pomona-College/hpc-parallel-computing/edit/main/episodes/10-distributed-concepts.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 15 minutes</p>
@@ -3192,7 +3214,7 @@ runtime</li>
 <ul>
 <li>When do I need distributed-memory computing?</li>
 <li>What is MPI and how does it work?</li>
-<li>How do I run MPI programs on Sagehen?</li>
+<li>How do I run MPI programs on Sagehen HPC?</li>
 </ul>
 </div>
 </div>
@@ -3365,7 +3387,7 @@ nodes</li>
 </div>
 </section></section><section id="aio-11-mpi-basics"><p>Content from <a href="11-mpi-basics.html">MPI Basics</a></p>
 <hr>
-<p>Last updated on 2026-08-24 |
+<p>Last updated on 2026-08-27 |
 
         <a href="https://github.com/Pomona-College/hpc-parallel-computing/edit/main/episodes/11-mpi-basics.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 50 minutes</p>
@@ -3463,7 +3485,7 @@ synchronization that throws away parallelism.</p>
 </div>
 <p>The key SLURM directive is <code>--ntasks=4</code>, which tells SLURM
 to launch 4 MPI processes. Use <code>srun</code> (not
-<code>mpirun</code>) to launch on Sagehen because <code>srun</code>
+<code>mpirun</code>) to launch on Sagehen HPC because <code>srun</code>
 knows about SLURM’s allocation and places ranks correctly across
 nodes.</p>
 </section><section><h2 class="section-heading" id="distributed-sum">Distributed Sum<a class="anchor" aria-label="anchor" href="#distributed-sum"></a>
@@ -3557,7 +3579,9 @@ from its rank ID, computes locally, and contributes to a final
 reduction. There is no inter-rank communication during the actual
 computation, only at the end. This minimizes communication and gives
 near-linear scaling.</p>
-</section><section><h2 class="section-heading" id="mpi-performance-considerations">MPI Performance Considerations<a class="anchor" aria-label="anchor" href="#mpi-performance-considerations"></a>
+<figure><img src="../fig/06-mpi-operations.png" alt="Four panels showing MPI collective operations. Reduce sums values 3, 7 and 2 from ranks 1 to 3 into 12 on rank 0. Gather collects B, C and D from ranks 1 to 3 into A B C D on rank 0. Scatter sends the parts of A B C D from rank 0 out to ranks 1, 2 and 3. Broadcast copies the value A from rank 0 to all three other ranks." class="figure mx-auto d-block"><div class="figcaption">The four collective operations, and which
+direction the data moves in each.</div>
+</figure></section><section><h2 class="section-heading" id="mpi-performance-considerations">MPI Performance Considerations<a class="anchor" aria-label="anchor" href="#mpi-performance-considerations"></a>
 </h2>
 <hr class="half-width">
 <p>MPI scales well only if:</p>
@@ -3740,7 +3764,7 @@ problems</li>
 </div>
 </section></section><section id="aio-12-choosing-approach"><p>Content from <a href="12-choosing-approach.html">Choosing the Right Approach</a></p>
 <hr>
-<p>Last updated on 2026-08-24 |
+<p>Last updated on 2026-08-27 |
 
         <a href="https://github.com/Pomona-College/hpc-parallel-computing/edit/main/episodes/12-choosing-approach.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 25 minutes</p>
@@ -3815,7 +3839,9 @@ fraction &gt; 80%, and multiple cores are available.</p>
       NO  -&gt; Use MPI (distributed)</code></pre>
 <p><strong>Order of preference: Job arrays &gt; Shared memory &gt;
 MPI</strong></p>
-</section><section><h2 class="section-heading" id="worked-examples">Worked Examples<a class="anchor" aria-label="anchor" href="#worked-examples"></a>
+<figure><img src="../fig/07-strategy-decision.png" alt="A decision tree for choosing a parallelisation strategy. If the tasks are fully independent, start with SLURM job arrays. If not, ask whether the work fits on one node of up to 128 cores; if it does, use shared memory with OpenMP or multiprocessing. If not, ask whether it must span multiple nodes; if it must, use MPI, the most complex option, and if not, rethink the problem." class="figure mx-auto d-block"><div class="figcaption">Work down the list and stop at the first
+approach that fits.</div>
+</figure></section><section><h2 class="section-heading" id="worked-examples">Worked Examples<a class="anchor" aria-label="anchor" href="#worked-examples"></a>
 </h2>
 <hr class="half-width">
 <div class="section level3">
@@ -4063,8 +4089,8 @@ performance</li>
   "url": "https://pomona-college.github.io/hpc-parallel-computing/instructor/aio.html",
   "identifier": "https://pomona-college.github.io/hpc-parallel-computing/instructor/aio.html",
   "dateCreated": "2026-03-05",
-  "dateModified": "2026-08-26",
-  "datePublished": "2026-08-26"
+  "dateModified": "2026-08-27",
+  "datePublished": "2026-08-27"
 }
 
   </script><script>

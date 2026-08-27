@@ -364,7 +364,7 @@
       </div>
     </nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Amdahl's Law and Speedup</h1>
-        <p>Last updated on 2026-08-24 |
+        <p>Last updated on 2026-08-27 |
 
         <a href="https://github.com/Pomona-College/hpc-parallel-computing/edit/main/episodes/02-amdahls-law.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -457,7 +457,7 @@ processors:</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p><strong>Scenario 1:</strong> <span class="math inline">\(S_8 =
 1/0.1338 = 7.48\)</span> (93.5% efficiency)</p>
@@ -469,7 +469,9 @@ processors:</p>
 </div>
 </div>
 </div>
-</div>
+<figure><img src="../fig/08-amdahl.png" alt="Two panels illustrating Amdahl's Law. On the left, code is split into a serial portion of twenty percent that cannot be parallelised and a parallel portion of eighty percent that can use many cores. On the right, total time as cores increase: one core takes one hundred percent, four cores take twenty plus eighty over four equals forty percent, sixteen cores take twenty plus eighty over sixteen equals twenty-five percent, and infinite cores still take twenty percent because the serial portion remains." class="figure mx-auto d-block"><div class="figcaption">The serial fraction sets a floor no amount of
+hardware can get below.</div>
+</figure></div>
 </section><section><h2 class="section-heading" id="measuring-in-practice">Measuring in Practice<a class="anchor" aria-label="anchor" href="#measuring-in-practice"></a></h2>
 <hr class="half-width"><div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -572,8 +574,8 @@ complexity</li>
   "url": "https://pomona-college.github.io/hpc-parallel-computing/instructor/02-amdahls-law.html",
   "identifier": "https://pomona-college.github.io/hpc-parallel-computing/instructor/02-amdahls-law.html",
   "dateCreated": "2026-03-05",
-  "dateModified": "2026-08-24",
-  "datePublished": "2026-08-26"
+  "dateModified": "2026-08-27",
+  "datePublished": "2026-08-27"
 }
 
   </script><script>

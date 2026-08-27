@@ -423,18 +423,66 @@
         <h1>All Images</h1>
         
 <section id="01-why-parallel-computing"><h2 class="section-heading"><a href="01-why-parallel-computing.html">Why Parallel Computing?</a></h2>
-<hr class="half-width"></section><section id="02-amdahls-law"><h2 class="section-heading"><a href="02-amdahls-law.html">Amdahl's Law and Speedup</a></h2>
-<hr class="half-width"></section><section id="03-types-of-parallelism"><h2 class="section-heading"><a href="03-types-of-parallelism.html">Types of Parallelism</a></h2>
-<hr class="half-width"></section><section id="04-embarrassingly-parallel"><h2 class="section-heading"><a href="04-embarrassingly-parallel.html">Embarrassingly Parallel Problems</a></h2>
-<hr class="half-width"></section><section id="05-gnu-parallel"><h2 class="section-heading"><a href="05-gnu-parallel.html">GNU Parallel and Shell Parallelism</a></h2>
-<hr class="half-width"></section><section id="06-slurm-job-arrays"><h2 class="section-heading"><a href="06-slurm-job-arrays.html">SLURM Job Arrays</a></h2>
-<hr class="half-width"></section><section id="07-advanced-job-arrays"><h2 class="section-heading"><a href="07-advanced-job-arrays.html">Advanced Job Arrays</a></h2>
-<hr class="half-width"></section><section id="08-shared-memory-openmp"><h2 class="section-heading"><a href="08-shared-memory-openmp.html">Shared Memory with OpenMP</a></h2>
+<hr class="half-width">
+<h3 id="01-why-parallel-computing-figure-1">Figure 1</h3>
+<p aria-hidden="true">Image 1 of 1: ‘Two panels. On the left, serial execution: Task A, Task B and Task C each take two hours and run one after another, giving a total of six hours. On the right, parallel execution: the same three tasks run at the same time and all feed into a total of two hours, with a note that the job finishes when the slowest task does.’</p>
+<figure><img src="fig/01-serial-vs-parallel.png" alt="Two panels. On the left, serial execution: Task A, Task B and Task C each take two hours and run one after another, giving a total of six hours. On the right, parallel execution: the same three tasks run at the same time and all feed into a total of two hours, with a note that the job finishes when the slowest task does." class="figure mx-auto d-block"><div class="figcaption">Three independent two-hour tasks: run one after
+another and the job takes six hours; run them at the same time and it
+takes two.</div>
+</figure><hr></section><section id="02-amdahls-law"><h2 class="section-heading"><a href="02-amdahls-law.html">Amdahl's Law and Speedup</a></h2>
+<hr class="half-width">
+<h3 id="02-amdahls-law-figure-1">Figure 1</h3>
+<p aria-hidden="true">Image 1 of 1: ‘Two panels illustrating Amdahl's Law. On the left, code is split into a serial portion of twenty percent that cannot be parallelised and a parallel portion of eighty percent that can use many cores. On the right, total time as cores increase: one core takes one hundred percent, four cores take twenty plus eighty over four equals forty percent, sixteen cores take twenty plus eighty over sixteen equals twenty-five percent, and infinite cores still take twenty percent because the serial portion remains.’</p>
+<figure><img src="fig/08-amdahl.png" alt="Two panels illustrating Amdahl's Law. On the left, code is split into a serial portion of twenty percent that cannot be parallelised and a parallel portion of eighty percent that can use many cores. On the right, total time as cores increase: one core takes one hundred percent, four cores take twenty plus eighty over four equals forty percent, sixteen cores take twenty plus eighty over sixteen equals twenty-five percent, and infinite cores still take twenty percent because the serial portion remains." class="figure mx-auto d-block"><div class="figcaption">The serial fraction sets a floor no amount of
+hardware can get below.</div>
+</figure><hr></section><section id="03-types-of-parallelism"><h2 class="section-heading"><a href="03-types-of-parallelism.html">Types of Parallelism</a></h2>
+<hr class="half-width">
+<h3 id="03-types-of-parallelism-figure-1">Figure 1</h3>
+<p aria-hidden="true">Image 1 of 1: ‘Two panels. Shared memory on one node shows four cores all reading the same 500 GB of RAM, used by OpenMP, threading and multiprocessing, with a note that all 128 cores on a node share that memory. Distributed memory across many nodes shows Node A and Node B, each with 128 cores and their own RAM, connected through a network, with a note that data must be sent explicitly using MPI.’</p>
+<figure><img src="fig/02-shared-vs-distributed.png" alt="Two panels. Shared memory on one node shows four cores all reading the same 500 GB of RAM, used by OpenMP, threading and multiprocessing, with a note that all 128 cores on a node share that memory. Distributed memory across many nodes shows Node A and Node B, each with 128 cores and their own RAM, connected through a network, with a note that data must be sent explicitly using MPI." class="figure mx-auto d-block"><div class="figcaption">Shared memory keeps everything in one address
+space; distributed memory makes you send data across the network
+yourself.</div>
+</figure><hr></section><section id="04-embarrassingly-parallel"><h2 class="section-heading"><a href="04-embarrassingly-parallel.html">Embarrassingly Parallel Problems</a></h2>
+<hr class="half-width">
+<h3 id="04-embarrassingly-parallel-figure-1">Figure 1</h3>
+<p aria-hidden="true">Image 1 of 1: ‘A decision tree starting from the question, is my problem embarrassingly parallel. If the tasks are not independent, the answer is that it is not embarrassingly parallel and MPI is covered in episode 11. If they are independent, the next question is whether results can be combined afterwards; if yes, use a SLURM job array with sbatch --array=1-100, and if no, restructure the problem first.’</p>
+<figure><img src="fig/03-embarrassingly-parallel.png" alt="A decision tree starting from the question, is my problem embarrassingly parallel. If the tasks are not independent, the answer is that it is not embarrassingly parallel and MPI is covered in episode 11. If they are independent, the next question is whether results can be combined afterwards; if yes, use a SLURM job array with sbatch --array=1-100, and if no, restructure the problem first." class="figure mx-auto d-block"><div class="figcaption">If the tasks are independent and the results can
+be combined afterwards, a job array is all you need.</div>
+</figure><hr></section><section id="05-gnu-parallel"><h2 class="section-heading"><a href="05-gnu-parallel.html">GNU Parallel and Shell Parallelism</a></h2>
+<hr class="half-width">
+<h3 id="05-gnu-parallel-figure-1">Figure 1</h3>
+<p aria-hidden="true">Image 1 of 1: ‘Terminal on Sagehen HPC. The command module avail parallel returns No module(s) or extension(s) found, followed by the usual Lmod suggestions to try module --default avail or module spider.’</p>
+<figure><img src="fig/05-gnu-parallel-not-installed.png" alt="Terminal on Sagehen HPC. The command module avail parallel returns No module(s) or extension(s) found, followed by the usual Lmod suggestions to try module --default avail or module spider." class="figure mx-auto d-block"><div class="figcaption">Checked on Sagehen HPC: there is no
+<code>parallel</code> module, which is why the episode installs it into
+your own conda environment.</div>
+</figure><hr></section><section id="06-slurm-job-arrays"><h2 class="section-heading"><a href="06-slurm-job-arrays.html">SLURM Job Arrays</a></h2>
+<hr class="half-width">
+<h3 id="06-slurm-job-arrays-figure-1">Figure 1</h3>
+<p aria-hidden="true">Image 1 of 1: ‘A flow diagram. The command sbatch --array=1-100 my_script.sh causes SLURM to create 100 independent jobs, which run in parallel. Job 1 has SLURM_ARRAY_TASK_ID equal to 1, Job 2 has 2, and Job 100 has 100. All of them feed into a step that combines the results. A caption notes that each job reads its own SLURM_ARRAY_TASK_ID and works on that slice of the problem.’</p>
+<figure><img src="fig/04-job-arrays.png" alt="A flow diagram. The command sbatch --array=1-100 my_script.sh causes SLURM to create 100 independent jobs, which run in parallel. Job 1 has SLURM_ARRAY_TASK_ID equal to 1, Job 2 has 2, and Job 100 has 100. All of them feed into a step that combines the results. A caption notes that each job reads its own SLURM_ARRAY_TASK_ID and works on that slice of the problem." class="figure mx-auto d-block"><div class="figcaption">One sbatch command creates a hundred independent
+jobs, each told which slice of the work it owns.</div>
+</figure><hr></section><section id="07-advanced-job-arrays"><h2 class="section-heading"><a href="07-advanced-job-arrays.html">Advanced Job Arrays</a></h2>
+<hr class="half-width">
+<h3 id="07-advanced-job-arrays-figure-1">Figure 1</h3>
+<p aria-hidden="true">Image 1 of 1: ‘A five-step flow. Define the parameters, for example learning rate values of 0.001, 0.01 and 0.1 and batch sizes of 32, 64 and 128. Write them to a parameter file with nine combinations, one per line. Submit one array job with sbatch --array=1-9 sweep.sh. Each task reads the line matching its SLURM_ARRAY_TASK_ID and runs that experiment. Finally, collect the results and pick the best.’</p>
+<figure><img src="fig/05-parameter-sweep.png" alt="A five-step flow. Define the parameters, for example learning rate values of 0.001, 0.01 and 0.1 and batch sizes of 32, 64 and 128. Write them to a parameter file with nine combinations, one per line. Submit one array job with sbatch --array=1-9 sweep.sh. Each task reads the line matching its SLURM_ARRAY_TASK_ID and runs that experiment. Finally, collect the results and pick the best." class="figure mx-auto d-block"><div class="figcaption">A parameter sweep is a job array over a list of
+settings, one line per combination.</div>
+</figure><hr></section><section id="08-shared-memory-openmp"><h2 class="section-heading"><a href="08-shared-memory-openmp.html">Shared Memory with OpenMP</a></h2>
 <hr class="half-width"></section><section id="09-threading-python"><h2 class="section-heading"><a href="09-threading-python.html">Threading in Python and R Parallelism</a></h2>
 <hr class="half-width"></section><section id="10-distributed-concepts"><h2 class="section-heading"><a href="10-distributed-concepts.html">Distributed Computing Concepts</a></h2>
 <hr class="half-width"></section><section id="11-mpi-basics"><h2 class="section-heading"><a href="11-mpi-basics.html">MPI Basics</a></h2>
-<hr class="half-width"></section><section id="12-choosing-approach"><h2 class="section-heading"><a href="12-choosing-approach.html">Choosing the Right Approach</a></h2>
-<hr class="half-width"></section>
+<hr class="half-width">
+<h3 id="11-mpi-basics-figure-1">Figure 1</h3>
+<p aria-hidden="true">Image 1 of 1: ‘Four panels showing MPI collective operations. Reduce sums values 3, 7 and 2 from ranks 1 to 3 into 12 on rank 0. Gather collects B, C and D from ranks 1 to 3 into A B C D on rank 0. Scatter sends the parts of A B C D from rank 0 out to ranks 1, 2 and 3. Broadcast copies the value A from rank 0 to all three other ranks.’</p>
+<figure><img src="fig/06-mpi-operations.png" alt="Four panels showing MPI collective operations. Reduce sums values 3, 7 and 2 from ranks 1 to 3 into 12 on rank 0. Gather collects B, C and D from ranks 1 to 3 into A B C D on rank 0. Scatter sends the parts of A B C D from rank 0 out to ranks 1, 2 and 3. Broadcast copies the value A from rank 0 to all three other ranks." class="figure mx-auto d-block"><div class="figcaption">The four collective operations, and which
+direction the data moves in each.</div>
+</figure><hr></section><section id="12-choosing-approach"><h2 class="section-heading"><a href="12-choosing-approach.html">Choosing the Right Approach</a></h2>
+<hr class="half-width">
+<h3 id="12-choosing-approach-figure-1">Figure 1</h3>
+<p aria-hidden="true">Image 1 of 1: ‘A decision tree for choosing a parallelisation strategy. If the tasks are fully independent, start with SLURM job arrays. If not, ask whether the work fits on one node of up to 128 cores; if it does, use shared memory with OpenMP or multiprocessing. If not, ask whether it must span multiple nodes; if it must, use MPI, the most complex option, and if not, rethink the problem.’</p>
+<figure><img src="fig/07-strategy-decision.png" alt="A decision tree for choosing a parallelisation strategy. If the tasks are fully independent, start with SLURM job arrays. If not, ask whether the work fits on one node of up to 128 cores; if it does, use shared memory with OpenMP or multiprocessing. If not, ask whether it must span multiple nodes; if it must, use MPI, the most complex option, and if not, rethink the problem." class="figure mx-auto d-block"><div class="figcaption">Work down the list and stop at the first
+approach that fits.</div>
+</figure><hr></section>
 </div>
     </main>
 </div>
@@ -484,8 +532,8 @@
   "url": "https://pomona-college.github.io/hpc-parallel-computing/images.html",
   "identifier": "https://pomona-college.github.io/hpc-parallel-computing/images.html",
   "dateCreated": "2026-03-05",
-  "dateModified": "2026-08-26",
-  "datePublished": "2026-08-26"
+  "dateModified": "2026-08-27",
+  "datePublished": "2026-08-27"
 }
 
   </script><script>

@@ -365,7 +365,7 @@
       </div>
     </nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Embarrassingly Parallel Problems</h1>
-        <p>Last updated on 2026-08-24 |
+        <p>Last updated on 2026-08-27 |
 
         <a href="https://github.com/Pomona-College/hpc-parallel-computing/edit/main/episodes/04-embarrassingly-parallel.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -437,7 +437,9 @@ very good)</li>
 </div>
 </div>
 </div>
-</section><section><h2 class="section-heading" id="common-patterns">Common Patterns<a class="anchor" aria-label="anchor" href="#common-patterns"></a></h2>
+<figure><img src="../fig/03-embarrassingly-parallel.png" alt="A decision tree starting from the question, is my problem embarrassingly parallel. If the tasks are not independent, the answer is that it is not embarrassingly parallel and MPI is covered in episode 11. If they are independent, the next question is whether results can be combined afterwards; if yes, use a SLURM job array with sbatch --array=1-100, and if no, restructure the problem first." class="figure mx-auto d-block"><div class="figcaption">If the tasks are independent and the results can
+be combined afterwards, a job array is all you need.</div>
+</figure></section><section><h2 class="section-heading" id="common-patterns">Common Patterns<a class="anchor" aria-label="anchor" href="#common-patterns"></a></h2>
 <hr class="half-width"><div class="section level3">
 <h3 id="pattern-1-parameter-sweeps">Pattern 1: Parameter Sweeps<a class="anchor" aria-label="anchor" href="#pattern-1-parameter-sweeps"></a></h3>
 <pre><code>Serial: 100 learning rates x 30 seconds each = 50 minutes
@@ -635,8 +637,8 @@ valuable</li>
   "url": "https://pomona-college.github.io/hpc-parallel-computing/instructor/04-embarrassingly-parallel.html",
   "identifier": "https://pomona-college.github.io/hpc-parallel-computing/instructor/04-embarrassingly-parallel.html",
   "dateCreated": "2026-03-05",
-  "dateModified": "2026-08-24",
-  "datePublished": "2026-08-26"
+  "dateModified": "2026-08-27",
+  "datePublished": "2026-08-27"
 }
 
   </script><script>

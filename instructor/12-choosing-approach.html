@@ -368,7 +368,7 @@
       </div>
     </nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Choosing the Right Approach</h1>
-        <p>Last updated on 2026-08-24 |
+        <p>Last updated on 2026-08-27 |
 
         <a href="https://github.com/Pomona-College/hpc-parallel-computing/edit/main/episodes/12-choosing-approach.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -442,7 +442,9 @@ fraction &gt; 80%, and multiple cores are available.</p>
       NO  -&gt; Use MPI (distributed)</code></pre>
 <p><strong>Order of preference: Job arrays &gt; Shared memory &gt;
 MPI</strong></p>
-</section><section><h2 class="section-heading" id="worked-examples">Worked Examples<a class="anchor" aria-label="anchor" href="#worked-examples"></a></h2>
+<figure><img src="../fig/07-strategy-decision.png" alt="A decision tree for choosing a parallelisation strategy. If the tasks are fully independent, start with SLURM job arrays. If not, ask whether the work fits on one node of up to 128 cores; if it does, use shared memory with OpenMP or multiprocessing. If not, ask whether it must span multiple nodes; if it must, use MPI, the most complex option, and if not, rethink the problem." class="figure mx-auto d-block"><div class="figcaption">Work down the list and stop at the first
+approach that fits.</div>
+</figure></section><section><h2 class="section-heading" id="worked-examples">Worked Examples<a class="anchor" aria-label="anchor" href="#worked-examples"></a></h2>
 <hr class="half-width"><div class="section level3">
 <h3 id="parameter-sweep-100-ml-trainings-30s-each">Parameter Sweep (100 ML trainings, 30s each)<a class="anchor" aria-label="anchor" href="#parameter-sweep-100-ml-trainings-30s-each"></a></h3>
 <p>Analysis: Independent tasks, no communication. <strong>Use job
@@ -680,8 +682,8 @@ performance</li>
   "url": "https://pomona-college.github.io/hpc-parallel-computing/instructor/12-choosing-approach.html",
   "identifier": "https://pomona-college.github.io/hpc-parallel-computing/instructor/12-choosing-approach.html",
   "dateCreated": "2026-03-05",
-  "dateModified": "2026-08-24",
-  "datePublished": "2026-08-26"
+  "dateModified": "2026-08-27",
+  "datePublished": "2026-08-27"
 }
 
   </script><script>

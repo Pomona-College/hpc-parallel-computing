@@ -370,7 +370,7 @@
       </div>
     </nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>GNU Parallel and Shell Parallelism</h1>
-        <p>Last updated on 2026-08-24 |
+        <p>Last updated on 2026-08-27 |
 
         <a href="https://github.com/Pomona-College/hpc-parallel-computing/edit/main/episodes/05-gnu-parallel.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -419,7 +419,7 @@ arrays</li>
 </div>
 <section><h2 class="section-heading" id="why-shell-level-parallelism">Why Shell-Level Parallelism<a class="anchor" aria-label="anchor" href="#why-shell-level-parallelism"></a></h2>
 <hr class="half-width"><p>Before reaching for SLURM, the simplest parallelism is running
-multiple commands at once on a single node. Sagehen <code>amd</code>
+multiple commands at once on a single node. Sagehen HPC <code>amd</code>
 nodes have 128 cores; if you only need to process a few hundred files
 and each takes a few seconds, running 64 in parallel on one node
 finishes faster than the SLURM queue takes to schedule a job array.</p>
@@ -449,7 +449,10 @@ limit. If the loop has 1000 iterations, you spawn 1000 processes at once
 and the node falls over. Second, output from all jobs interleaves on
 stdout in unpredictable order. Third, there is no easy way to know which
 iteration failed.</p>
-</section><section><h2 class="section-heading" id="gnu-parallel-the-better-default">GNU Parallel: The Better Default<a class="anchor" aria-label="anchor" href="#gnu-parallel-the-better-default"></a></h2>
+<figure><img src="fig/05-gnu-parallel-not-installed.png" alt="Terminal on Sagehen HPC. The command module avail parallel returns No module(s) or extension(s) found, followed by the usual Lmod suggestions to try module --default avail or module spider." class="figure mx-auto d-block"><div class="figcaption">Checked on Sagehen HPC: there is no
+<code>parallel</code> module, which is why the episode installs it into
+your own conda environment.</div>
+</figure></section><section><h2 class="section-heading" id="gnu-parallel-the-better-default">GNU Parallel: The Better Default<a class="anchor" aria-label="anchor" href="#gnu-parallel-the-better-default"></a></h2>
 <hr class="half-width"><p>GNU Parallel solves all three problems. It is <strong>not</strong>
 preinstalled on Sagehen (there is no <code>parallel</code> module
 either) – install it once into a conda environment:</p>
@@ -690,8 +693,8 @@ to change. The next episode covers the SLURM side.</p>
 <div class="callout-content">
 <p><strong>Common pitfall: parallel reads from /bigdata</strong></p>
 <p>Running <code>parallel -j 32</code> where every task reads from
-<code>/bigdata</code> can saturate the NFS mount and slow every job on
-the node. If your tasks read shared input data, copy it to
+<code>/bigdata</code> can saturate the shared BeeGFS filesystem and slow
+every job using it. If your tasks read shared input data, copy it to
 <code>/scratch</code> once at the start and have all parallel tasks read
 from there.</p>
 <div class="codewrapper sourceCode" id="cb14">
@@ -897,8 +900,8 @@ one node or run for many hours</li>
   "url": "https://pomona-college.github.io/hpc-parallel-computing/05-gnu-parallel.html",
   "identifier": "https://pomona-college.github.io/hpc-parallel-computing/05-gnu-parallel.html",
   "dateCreated": "2026-03-05",
-  "dateModified": "2026-08-24",
-  "datePublished": "2026-08-26"
+  "dateModified": "2026-08-27",
+  "datePublished": "2026-08-27"
 }
 
   </script><script>

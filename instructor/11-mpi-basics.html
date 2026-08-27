@@ -368,7 +368,7 @@
       </div>
     </nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>MPI Basics</h1>
-        <p>Last updated on 2026-08-24 |
+        <p>Last updated on 2026-08-27 |
 
         <a href="https://github.com/Pomona-College/hpc-parallel-computing/edit/main/episodes/11-mpi-basics.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -465,7 +465,7 @@ synchronization that throws away parallelism.</p>
 </div>
 <p>The key SLURM directive is <code>--ntasks=4</code>, which tells SLURM
 to launch 4 MPI processes. Use <code>srun</code> (not
-<code>mpirun</code>) to launch on Sagehen because <code>srun</code>
+<code>mpirun</code>) to launch on Sagehen HPC because <code>srun</code>
 knows about SLURM’s allocation and places ranks correctly across
 nodes.</p>
 </section><section><h2 class="section-heading" id="distributed-sum">Distributed Sum<a class="anchor" aria-label="anchor" href="#distributed-sum"></a></h2>
@@ -554,7 +554,9 @@ from its rank ID, computes locally, and contributes to a final
 reduction. There is no inter-rank communication during the actual
 computation, only at the end. This minimizes communication and gives
 near-linear scaling.</p>
-</section><section><h2 class="section-heading" id="mpi-performance-considerations">MPI Performance Considerations<a class="anchor" aria-label="anchor" href="#mpi-performance-considerations"></a></h2>
+<figure><img src="../fig/06-mpi-operations.png" alt="Four panels showing MPI collective operations. Reduce sums values 3, 7 and 2 from ranks 1 to 3 into 12 on rank 0. Gather collects B, C and D from ranks 1 to 3 into A B C D on rank 0. Scatter sends the parts of A B C D from rank 0 out to ranks 1, 2 and 3. Broadcast copies the value A from rank 0 to all three other ranks." class="figure mx-auto d-block"><div class="figcaption">The four collective operations, and which
+direction the data moves in each.</div>
+</figure></section><section><h2 class="section-heading" id="mpi-performance-considerations">MPI Performance Considerations<a class="anchor" aria-label="anchor" href="#mpi-performance-considerations"></a></h2>
 <hr class="half-width"><p>MPI scales well only if:</p>
 <ol style="list-style-type: decimal"><li>
 <strong>Computation &gt;&gt; Communication</strong>: Each rank does
@@ -787,8 +789,8 @@ problems</li>
   "url": "https://pomona-college.github.io/hpc-parallel-computing/instructor/11-mpi-basics.html",
   "identifier": "https://pomona-college.github.io/hpc-parallel-computing/instructor/11-mpi-basics.html",
   "dateCreated": "2026-03-05",
-  "dateModified": "2026-08-24",
-  "datePublished": "2026-08-26"
+  "dateModified": "2026-08-27",
+  "datePublished": "2026-08-27"
 }
 
   </script><script>
