@@ -45,6 +45,8 @@ wait  # Wait for all background jobs to finish
 
 This works but has three problems. First, it offers no concurrency limit. If the loop has 1000 iterations, you spawn 1000 processes at once and the node falls over. Second, output from all jobs interleaves on stdout in unpredictable order. Third, there is no easy way to know which iteration failed.
 
+![Checked on Sagehen HPC: there is no `parallel` module, which is why the episode installs it into your own conda environment.](fig/05-gnu-parallel-not-installed.png){alt='Terminal on Sagehen HPC. The command module avail parallel returns No module(s) or extension(s) found, followed by the usual Lmod suggestions to try module --default avail or module spider.'}
+
 ## GNU Parallel: The Better Default
 
 GNU Parallel solves all three problems. It is **not** preinstalled on Sagehen
