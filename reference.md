@@ -269,7 +269,7 @@ $SLURM_SUBMIT_DIR          # Directory job was submitted from
 $SLURM_TMPDIR              # Temporary directory on node
 ```
 
-## Sagehen Cluster Specifications
+## Sagehen HPC Cluster Specifications
 
 ### Hardware
 

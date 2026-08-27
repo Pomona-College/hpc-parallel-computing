@@ -7,7 +7,7 @@ exercises: 10
 ::::::::::::::::::::::::::::::::::::: questions
 - What is the difference between shared memory and distributed memory?
 - What is data parallelism vs task parallelism?
-- How does Sagehen's architecture combine both?
+- How does Sagehen HPC's architecture combine both?
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
@@ -51,7 +51,9 @@ Each processor has its **own memory**. Data sharing requires explicit message pa
 **Challenges:** Higher latency, explicit communication code.
 **Examples:** MPI, Spark, distributed databases.
 
-### Sagehen's Hybrid Architecture
+![Shared memory keeps everything in one address space; distributed memory makes you send data across the network yourself.](fig/02-shared-vs-distributed.png){alt='Two panels. Shared memory on one node shows four cores all reading the same 500 GB of RAM, used by OpenMP, threading and multiprocessing, with a note that all 128 cores on a node share that memory. Distributed memory across many nodes shows Node A and Node B, each with 128 cores and their own RAM, connected through a network, with a note that data must be sent explicitly using MPI.'}
+
+### Sagehen HPC's Hybrid Architecture
 
 Sagehen uses both:
 - **Within a node:** 128 cores sharing 512GB RAM (shared memory)

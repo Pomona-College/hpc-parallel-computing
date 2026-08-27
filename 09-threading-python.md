@@ -61,7 +61,7 @@ result_parallel <- parLapply(cl, 1:1000000, square_plus)
 stopCluster(cl)
 ```
 
-The `makeCluster` / `stopCluster` pair is mandatory: without `stopCluster`, the worker processes leak and stay around until the R session ends. On Sagehen, leaked workers can fill up the node's process table and cause subsequent jobs to fail mysteriously.
+The `makeCluster` / `stopCluster` pair is mandatory: without `stopCluster`, the worker processes leak and stay around until the R session ends. On Sagehen HPC, leaked workers can fill up the node's process table and cause subsequent jobs to fail mysteriously.
 
 ### R Monte Carlo Example
 

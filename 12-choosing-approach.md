@@ -50,6 +50,8 @@ Does it take > 1 minute?
 
 **Order of preference: Job arrays > Shared memory > MPI**
 
+![Work down the list and stop at the first approach that fits.](fig/07-strategy-decision.png){alt='A decision tree for choosing a parallelisation strategy. If the tasks are fully independent, start with SLURM job arrays. If not, ask whether the work fits on one node of up to 128 cores; if it does, use shared memory with OpenMP or multiprocessing. If not, ask whether it must span multiple nodes; if it must, use MPI, the most complex option, and if not, rethink the problem.'}
+
 ## Worked Examples
 
 ### Parameter Sweep (100 ML trainings, 30s each)

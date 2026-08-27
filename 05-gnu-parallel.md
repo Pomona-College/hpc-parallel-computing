@@ -21,7 +21,7 @@ exercises: 25
 
 ## Why Shell-Level Parallelism
 
-Before reaching for SLURM, the simplest parallelism is running multiple commands at once on a single node. Sagehen `amd` nodes have 128 cores; if you only need to process a few hundred files and each takes a few seconds, running 64 in parallel on one node finishes faster than the SLURM queue takes to schedule a job array.
+Before reaching for SLURM, the simplest parallelism is running multiple commands at once on a single node. Sagehen HPC `amd` nodes have 128 cores; if you only need to process a few hundred files and each takes a few seconds, running 64 in parallel on one node finishes faster than the SLURM queue takes to schedule a job array.
 
 Shell parallelism shines for:
 
@@ -44,6 +44,8 @@ wait  # Wait for all background jobs to finish
 ```
 
 This works but has three problems. First, it offers no concurrency limit. If the loop has 1000 iterations, you spawn 1000 processes at once and the node falls over. Second, output from all jobs interleaves on stdout in unpredictable order. Third, there is no easy way to know which iteration failed.
+
+![Checked on Sagehen HPC: there is no `parallel` module, which is why the episode installs it into your own conda environment.](fig/05-gnu-parallel-not-installed.png){alt='Terminal on Sagehen HPC. The command module avail parallel returns No module(s) or extension(s) found, followed by the usual Lmod suggestions to try module --default avail or module spider.'}
 
 ## GNU Parallel: The Better Default
 
@@ -249,7 +251,7 @@ The transition is mechanical: a SLURM array's `$SLURM_ARRAY_TASK_ID` plays the r
 ::::::::::::::::::::::::::::::::::::: callout
 **Common pitfall: parallel reads from /bigdata**
 
-Running `parallel -j 32` where every task reads from `/bigdata` can saturate the NFS mount and slow every job on the node. If your tasks read shared input data, copy it to `/scratch` once at the start and have all parallel tasks read from there.
+Running `parallel -j 32` where every task reads from `/bigdata` can saturate the shared BeeGFS filesystem and slow every job using it. If your tasks read shared input data, copy it to `/scratch` once at the start and have all parallel tasks read from there.
 
 ```bash
 # Stage shared input once

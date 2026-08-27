@@ -21,7 +21,7 @@ exercises: 15
 
 ## Shared-Memory Parallelism in Context
 
-Sagehen's `amd` nodes have 128 cores and 512 GB of RAM each. Shared-memory parallelism uses multiple cores on one node, all reading and writing to the same memory pool. This is in contrast to distributed parallelism (next two episodes), which uses many nodes coordinating through network messages.
+Sagehen HPC's `amd` nodes have 128 cores and 512 GB of RAM each. Shared-memory parallelism uses multiple cores on one node, all reading and writing to the same memory pool. This is in contrast to distributed parallelism (next two episodes), which uses many nodes coordinating through network messages.
 
 Shared memory is simpler: no networking, no message-passing protocols, no failure-mode complexity from a flaky link between machines. The cost is that you cannot scale past one node. For most research workflows on Sagehen, that is plenty: 128 cores is enormous compared to a laptop's 8.
 

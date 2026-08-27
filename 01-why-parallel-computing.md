@@ -44,6 +44,8 @@ Total time: 10 seconds
 
 **Parallelism trades computational work across multiple processors to reduce wall clock time.**
 
+![Three independent two-hour tasks: run one after another and the job takes six hours; run them at the same time and it takes two.](fig/01-serial-vs-parallel.png){alt='Two panels. On the left, serial execution: Task A, Task B and Task C each take two hours and run one after another, giving a total of six hours. On the right, parallel execution: the same three tasks run at the same time and all feed into a total of two hours, with a note that the job finishes when the slowest task does.'}
+
 ## Understanding Speedup and Efficiency
 
 ### Speedup
